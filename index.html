@@ -31,11 +31,19 @@
     <script>
         // Variables globales
         let totalSeconds = 0; // Tiempo inicial en segundos (comienza en 0)
+        let interval = null; // Variable para almacenar el intervalo
         const timerElement = document.getElementById('timer'); // Contenedor del temporizador
 
         // Función principal para el contador hacia adelante
         function startTimer() {
-            const interval = setInterval(() => {
+            // Limpiar cualquier intervalo previo (por si se reinicia)
+            if (interval) clearInterval(interval);
+
+            // Reiniciar la variable de tiempo
+            totalSeconds = 0;
+
+            // Iniciar el temporizador
+            interval = setInterval(() => {
                 totalSeconds++; // Incrementar tiempo en segundos
 
                 // Calcular minutos y segundos
@@ -57,7 +65,10 @@
             }, 1000); // Intervalo de 1 segundo
         }
 
-        // Iniciar el temporizador automáticamente
+        // Evento de clic para reiniciar el temporizador
+        timerElement.addEventListener('click', startTimer);
+
+        // Iniciar el temporizador automáticamente al cargar la página
         startTimer();
     </script>
 </body>

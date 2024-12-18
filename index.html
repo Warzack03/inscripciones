@@ -30,17 +30,20 @@
 
     <script>
         // Variables globales
-        let totalSeconds = 0; // Tiempo inicial en segundos (comienza en 0)
+        let totalSeconds = 0; // Tiempo inicial en segundos
         let interval = null; // Variable para almacenar el intervalo
-        const timerElement = document.getElementById('timer'); // Contenedor del temporizador
+        const timerElement = document.getElementById('timer'); // Elemento del temporizador
 
-        // Función principal para el contador hacia adelante
+        // Función principal para iniciar el contador hacia adelante
         function startTimer() {
-            // Limpiar cualquier intervalo previo (por si se reinicia)
+            // Limpiar cualquier intervalo previo para reiniciar
             if (interval) clearInterval(interval);
 
-            // Reiniciar la variable de tiempo
+            // Reiniciar el contador a 0
             totalSeconds = 0;
+
+            // Actualizar el texto del temporizador a 00:00
+            timerElement.textContent = "00:00";
 
             // Iniciar el temporizador
             interval = setInterval(() => {
@@ -66,10 +69,12 @@
         }
 
         // Evento de clic para reiniciar el temporizador
-        timerElement.addEventListener('click', startTimer);
+        timerElement.addEventListener('click', () => {
+            startTimer(); // Reiniciar el temporizador al hacer clic
+        });
 
         // Iniciar el temporizador automáticamente al cargar la página
-        // startTimer();
+        startTimer();
     </script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+/* Estilo general del cuerpo */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white; /* Fondo blanco */
+}
+
+/* Estilo del temporizador */
+#timer {1
+  font-family: Arial, sans-serif; /* Fuente estándar */
+  font-size: 150px; /* Tamaño grande del texto */
+  font-weight: bold;
+  color: #111; /* Color negro */
+}

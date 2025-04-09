@@ -1,80 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador 25 Minutos</title>
+    <title>Tarjetas Interactivas</title>
     <style>
-        /* Estilo general del cuerpo */
         body {
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .intro {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 150px;
+            height: 150px;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: auto;
-            background-color: #fff0;  
+            cursor: pointer;
+            border-radius: 10px;
+            perspective: 1000px;
         }
 
-        /* Estilo del temporizador */
-        #timer {
-            font-family: Arial, sans-serif; /* Fuente estándar */
-            font-size: 25px; /* Tamaño grande del texto */
-            font-weight: bold;
-            color: #111; /* Color negro */
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .card-front {
+            background-color: inherit;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            background-color: #333;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+            color: black;
+        }
+
+        .red {
+            background-color: red;
         }
     </style>
 </head>
 <body>
-    <div id="timer">00:00</div> <!-- Contenedor del temporizador -->
+    <div class="intro">
+        Este es un texto introductorio. Puedes editarlo más tarde según lo que desees.
+    </div>
 
-    <script>
-        // Variables globales
-        let totalSeconds = 0; // Tiempo inicial en segundos
-        let interval = null; // Variable para almacenar el intervalo
-        const timerElement = document.getElementById('timer'); // Elemento del temporizador
-
-        // Función principal para iniciar el contador hacia adelante
-        function startTimer() {
-            // Limpiar cualquier intervalo previo para reiniciar
-            if (interval) clearInterval(interval);
-
-            // Reiniciar el contador a 0
-            totalSeconds = 0;
-
-            // Actualizar el texto del temporizador a 00:00
-            timerElement.textContent = "00:00";
-
-            // Iniciar el temporizador
-            interval = setInterval(() => {
-                totalSeconds++; // Incrementar tiempo en segundos
-
-                // Calcular minutos y segundos
-                let minutes = Math.floor(totalSeconds / 60);
-                let seconds = totalSeconds % 60;
-
-                // Formatear los minutos y segundos a dos dígitos
-                minutes = String(minutes).padStart(2, '0');
-                seconds = String(seconds).padStart(2, '0');
-
-                // Actualizar el contenido del temporizador
-                timerElement.textContent = `${minutes}:${seconds}`;
-
-                // Detener el temporizador al llegar a 25 minutos
-                if (totalSeconds >= 25 * 60) {
-                    clearInterval(interval); // Detener el contador
-                    timerElement.textContent = "25:00"; // Asegurar el formato final
-                }
-            }, 1000); // Intervalo de 1 segundo
-        }
-
-        // Evento de clic para reiniciar el temporizador
-        timerElement.addEventListener('click', () => {
-            startTimer(); // Reiniciar el temporizador al hacer clic
-        });
-
-        // Iniciar el temporizador automáticamente al cargar la página
-        startTimer();
-    </script>
+    <div class="card-container">
+        <div class="card green">
+            <div class="card-inner">
+                <div class="card-front">¿Qué nos ofrece?</div>
+                <div class="card-back">Horarios mencionados, NO escudo y GRATIS</div>
+            </div>
+        </div>
+        <div class="card yellow">
+            <div class="card-inner">
+                <div class="card-front">Cosas a tener en cuenta</div>
+                <div class="card-back">Mirar que horarios extra, nos dan jugadores, también nos quitarán y asegurarnos lo del nombre</div>
+            </div>
+        </div>
+        <div class="card red">
+            <div class="card-inner">
+                <div class="card-front">Requisitos</div>
+                <div class="card-back">Nombre Villa en inscripciones (creo que solo ahí)</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

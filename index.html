@@ -8,13 +8,13 @@
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            background-color: #e3e6f0;
+            background-color: #3A68A8; /* Fondo de la página */
             color: #333;
         }
 
         header {
-            background-color: #002366; /* Azul oscuro del escudo */
-            color: gold; /* Dorado */
+            background-color: #E7CE74; /* Fondo de la cabecera */
+            color: #3A68A8; /* Color de las letras */
             padding: 20px;
             text-align: center;
             font-size: 24px;
@@ -26,13 +26,15 @@
             text-align: center;
             font-size: 22px;
             max-width: 800px;
-            color: #002366; /* Azul oscuro */
+            color: #EDCB50; /* Color del texto de introducción */
+            font-weight: bold; /* Negrita */
+            text-transform: uppercase; /* Mayúsculas */
         }
 
         .card-container {
             display: flex;
             justify-content: center;
-            gap: 40px; /* Espacio entre las tarjetas */
+            gap: 60px; /* Mayor espacio entre las tarjetas */
             margin: 40px auto;
             max-width: 1200px;
         }
@@ -42,6 +44,7 @@
             height: 300px;
             perspective: 1000px;
             cursor: pointer;
+            border: 3px solid #3A68A8; /* Borde de las tarjetas */
         }
 
         .card-inner {
@@ -67,8 +70,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px; /* Letras más grandes */
+            font-size: 26px; /* Letras más grandes */
             padding: 20px;
+            box-sizing: border-box; /* Asegura que el tamaño incluye bordes y relleno */
         }
 
         .card-front {

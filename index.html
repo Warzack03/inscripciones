@@ -5,51 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Únete a Rising Raimon</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <style>
         body {
             font-family: 'Arial', sans-serif;
         }
-        .slider-container {
-            overflow: hidden;
-            position: relative;
+        .swiper-container {
             width: 100%;
             max-width: 700px;
-            margin: auto;
+            overflow: hidden;
         }
-        .slider {
+        .swiper-slide {
             display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .slider img {
-            width: 50%;
-            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
         }
         .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
             width: 40px;
             cursor: pointer;
         }
-        .slider-btn-left {
-            left: 10px;
-            transform: translateY(-50%) rotate(180deg);
+        .testimonials {
+            background-color: #f8f8f8;
+            padding: 40px;
         }
-        .slider-btn-right {
-            right: 10px;
+        .testimonial-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body class="bg-[#3A68A8] text-white">
 
-    <!-- Hero -->
-    <section class="relative text-center py-24 bg-cover bg-center flex items-center justify-center" style="background-image: url('Pose_cartel_final.png'); height: 90vh;">
-        <div class="absolute inset-0 bg-black opacity-60"></div>
+    <!-- Hero con video -->
+    <section class="relative text-center py-24 flex items-center justify-center">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+            <source src="testeo.mp4" type="video/mp4">
+        </video>
         <div class="relative z-10 text-center">
             <img src="ESCUDO.png" alt="Escudo Rising Raimon" class="mx-auto w-48 h-48 animate-pulse">
-            <h1 class="text-6xl font-bold mt-4 text-[#EDCB50] drop-shadow-lg">¡Únete a Rising Raimon!</h1>
-            <p class="mt-3 text-2xl text-[#E7CE74] font-semibold">Forma parte del mejor equipo, sin importar tu nivel.</p>
-            <button onclick="document.getElementById('formulario').scrollIntoView({behavior: 'smooth'})" class="mt-6 bg-[#EDCB50] text-[#3A68A8] font-bold py-3 px-6 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50] text-xl">Inscríbete ahora</button>
+            <h1 class="text-6xl font-bold mt-4 text-[#EDCB50] drop-shadow-lg animate__animated animate__fadeInDown">¡Únete a Rising Raimon!</h1>
+            <p class="mt-3 text-2xl text-[#E7CE74] font-semibold animate__animated animate__fadeInUp">Forma parte del mejor equipo, sin importar tu nivel.</p>
+            <button onclick="document.getElementById('formulario').scrollIntoView({behavior: 'smooth'})" class="mt-6 bg-[#EDCB50] text-[#3A68A8] font-bold py-3 px-6 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50] text-xl animate__animated animate__pulse animate__infinite">Inscríbete ahora</button>
         </div>
     </section>
 
@@ -91,19 +89,19 @@
         </div>
     </section>
 
-    <!-- Slider de imágenes -->
+    <!-- Slider de imágenes con Swiper.js -->
     <section class="container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center text-[#EDCB50]">👕 Ropa Oficial</h2>
-        <div class="slider-container">
-            <div class="slider" id="imageSlider">
-                <img src="CAMISETA_JUGADOR-Photoroom.png">
-                <img src="back-shirt.png">
-                <img src="front-shirt.png">
-                <img src="right_shirt.png">
-                <img src="left-shirt.png">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="CAMISETA_JUGADOR-Photoroom.png"></div>
+                <div class="swiper-slide"><img src="back-shirt.png"></div>
+                <div class="swiper-slide"><img src="front-shirt.png"></div>
+                <div class="swiper-slide"><img src="right_shirt.png"></div>
+                <div class="swiper-slide"><img src="left-shirt.png"></div>
             </div>
-            <img src="circulo-de-flecha.png" class="slider-btn slider-btn-left" onclick="moveSlider(-1)">
-            <img src="circulo-de-flecha.png" class="slider-btn slider-btn-right" onclick="moveSlider(1)">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </section>
 
@@ -114,22 +112,40 @@
         <img src="Captura%20de%20pantalla%202025-04-10%20100539.png" class="w-full rounded-lg shadow-lg mt-6">
     </section>
 
+    <!-- Testimonios -->
+    <section class="testimonials">
+        <h2 class="text-3xl font-bold text-center text-[#3A68A8]">📣 Testimonios</h2>
+        <div class="flex justify-center space-x-6 mt-6">
+            <div class="testimonial-card">
+                <img src="https://via.placeholder.com/150" class="rounded-full mx-auto">
+                <p class="mt-4">"¡Jugar en Rising Raimon ha sido una experiencia increíble! El equipo es fantástico."</p>
+                <p class="mt-2 font-bold">- Juan Pérez</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://via.placeholder.com/150" class="rounded-full mx-auto">
+                <p class="mt-4">"Nunca había sentido tanta pasión por el fútbol hasta que me uní al club."</p>
+                <p class="mt-2 font-bold">- María Gómez</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-black text-white text-center py-6">
         <p>© 2025 Rising Raimon | Contacto: info@risingraimon.es | Patrocinadores: [Tu lista de patrocinadores]</p>
     </footer>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        let index = 0;
-        function moveSlider(direction) {
-            const slider = document.getElementById('imageSlider');
-            const totalImages = slider.children.length / 2; // Mostrar 2 por slide
-            index += direction;
-            if (index < 0) index = totalImages - 1;
-            if (index >= totalImages) index = 0;
-            slider.style.transform = `translateX(-${index * 100}%)`;
-        }
-        setInterval(() => moveSlider(1), 3000); // Cambio automático cada 3 segundos
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: { delay: 3000 },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
+        });
     </script>
 </body>
 </html>

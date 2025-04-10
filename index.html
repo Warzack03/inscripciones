@@ -131,10 +131,11 @@
         /* Formularios en móviles */
         @media screen and (max-width: 768px) {
             video {
-                height: 70%; /* Reduce el tamaño en móviles */
+                height: 55%; /* Reduce el tamaño en móviles */
             }
         
             #formulario {
+                margin-top: 10%;
                 padding: 20px;
                 max-width: 90%;
             }
@@ -172,7 +173,7 @@
 
     <!-- Hero con video -->
     <section class="relative text-center py-24 flex items-center justify-center">
-        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="testeo.mp4" type="video/mp4">
         </video>
         <div class="relative z-10 text-center">

@@ -128,6 +128,52 @@
             color: #3A68A8;
         }
 
+        /* Sección de redes sociales */
+        .social-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f8f8f8;
+        }
+        
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .social-item:hover {
+            transform: scale(1.1);
+        }
+        
+        .social-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .social-item a {
+            font-size: 18px;
+            font-weight: bold;
+            color: #3A68A8;
+            text-decoration: none;
+        }
+        
+        .social-item a:hover {
+            text-decoration: underline;
+        }
+
+
         /* Formularios en móviles */
         @media screen and (max-width: 768px) {
             video {
@@ -239,6 +285,24 @@
         </div>
     </section>
 
+    <section class="social-section">
+        <h2 class="text-3xl font-bold text-center text-[#3A68A8]">🌐 Síguenos en nuestras redes</h2>
+        <div class="social-container">
+            <div class="social-item">
+                <img src="youtube-icon.png" alt="YouTube">
+                <a href="https://www.youtube.com/@RisingRaimon" target="_blank">YouTube</a>
+            </div>
+            <div class="social-item">
+                <img src="tik-tok-icon.png" alt="TikTok">
+                <a href="https://www.tiktok.com/@RisingRaimon" target="_blank">TikTok</a>
+            </div>
+            <div class="social-item">
+                <img src="instagram-icon.png" alt="Instagram">
+                <a href="https://www.instagram.com/risingraimon/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Instalaciones -->
     <section class="container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center text-[#EDCB50]">🏟️ Instalaciones</h2>

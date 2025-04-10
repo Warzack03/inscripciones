@@ -13,7 +13,7 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
             margin: auto;
         }
         .slider {
@@ -21,20 +21,19 @@
             transition: transform 0.5s ease-in-out;
         }
         .slider img {
-            width: 100%;
+            width: 50%;
             flex-shrink: 0;
         }
         .slider-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            padding: 10px;
+            width: 40px;
             cursor: pointer;
         }
         .slider-btn-left {
             left: 10px;
+            transform: translateY(-50%) rotate(180deg);
         }
         .slider-btn-right {
             right: 10px;
@@ -103,8 +102,8 @@
                 <img src="right_shirt.png">
                 <img src="left-shirt.png">
             </div>
-            <button class="slider-btn slider-btn-left" onclick="moveSlider(-1)">⬅️</button>
-            <button class="slider-btn slider-btn-right" onclick="moveSlider(1)">➡️</button>
+            <img src="circulo-de-flecha.png" class="slider-btn slider-btn-left" onclick="moveSlider(-1)">
+            <img src="circulo-de-flecha.png" class="slider-btn slider-btn-right" onclick="moveSlider(1)">
         </div>
     </section>
 
@@ -124,7 +123,7 @@
         let index = 0;
         function moveSlider(direction) {
             const slider = document.getElementById('imageSlider');
-            const totalImages = slider.children.length;
+            const totalImages = slider.children.length / 2; // Mostrar 2 por slide
             index += direction;
             if (index < 0) index = totalImages - 1;
             if (index >= totalImages) index = 0;

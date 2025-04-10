@@ -9,6 +9,36 @@
         body {
             font-family: 'Arial', sans-serif;
         }
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .slider-btn-left {
+            left: 10px;
+        }
+        .slider-btn-right {
+            right: 10px;
+        }
     </style>
 </head>
 <body class="bg-[#3A68A8] text-white">
@@ -62,19 +92,19 @@
         </div>
     </section>
 
-    <!-- Galería de ropa en slider -->
+    <!-- Slider de imágenes -->
     <section class="container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center text-[#EDCB50]">👕 Ropa Oficial</h2>
-        <div class="relative overflow-hidden w-full max-w-3xl mx-auto">
-            <div id="slider" class="flex transition-transform duration-300">
-                <img src="CAMISETA_JUGADOR-Photoroom.png" class="w-full rounded-lg shadow-lg">
-                <img src="back-shirt.png" class="w-full rounded-lg shadow-lg">
-                <img src="front-shirt.png" class="w-full rounded-lg shadow-lg">
-                <img src="right_shirt.png" class="w-full rounded-lg shadow-lg">
-                <img src="left-shirt.png" class="w-full rounded-lg shadow-lg">
+        <div class="slider-container">
+            <div class="slider" id="imageSlider">
+                <img src="CAMISETA_JUGADOR-Photoroom.png">
+                <img src="back-shirt.png">
+                <img src="front-shirt.png">
+                <img src="right_shirt.png">
+                <img src="left-shirt.png">
             </div>
-            <button onclick="moverSlider(-1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-lg">⬅️</button>
-            <button onclick="moverSlider(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-lg">➡️</button>
+            <button class="slider-btn slider-btn-left" onclick="moveSlider(-1)">⬅️</button>
+            <button class="slider-btn slider-btn-right" onclick="moveSlider(1)">➡️</button>
         </div>
     </section>
 
@@ -92,15 +122,15 @@
 
     <script>
         let index = 0;
-        function moverSlider(direction) {
-            const slider = document.getElementById('slider');
+        function moveSlider(direction) {
+            const slider = document.getElementById('imageSlider');
+            const totalImages = slider.children.length;
             index += direction;
-            const maxIndex = slider.children.length - 3;
-            if (index < 0) index = 0;
-            if (index > maxIndex) index = maxIndex;
+            if (index < 0) index = totalImages - 1;
+            if (index >= totalImages) index = 0;
             slider.style.transform = `translateX(-${index * 100}%)`;
         }
+        setInterval(() => moveSlider(1), 3000); // Cambio automático cada 3 segundos
     </script>
-
 </body>
 </html>

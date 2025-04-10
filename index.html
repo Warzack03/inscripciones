@@ -20,12 +20,12 @@
             <img src="ESCUDO.png" alt="Escudo Rising Raimon" class="mx-auto w-48 h-48 animate-pulse">
             <h1 class="text-6xl font-bold mt-4 text-[#EDCB50] drop-shadow-lg">¡Únete a Rising Raimon!</h1>
             <p class="mt-3 text-2xl text-[#E7CE74] font-semibold">Forma parte del mejor equipo, sin importar tu nivel.</p>
-            <button class="mt-6 bg-[#EDCB50] text-[#3A68A8] font-bold py-3 px-6 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50] text-xl">Inscríbete ahora</button>
+            <button onclick="document.getElementById('formulario').scrollIntoView({behavior: 'smooth'})" class="mt-6 bg-[#EDCB50] text-[#3A68A8] font-bold py-3 px-6 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50] text-xl">Inscríbete ahora</button>
         </div>
     </section>
 
     <!-- Formulario -->
-    <section class="container mx-auto py-10">
+    <section id="formulario" class="container mx-auto py-10">
         <div class="bg-white text-black p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
             <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Regístrate ahora</h2>
             <form action="TU_ENDPOINT_AQUI" method="POST" class="mt-6">
@@ -62,34 +62,45 @@
         </div>
     </section>
 
-    <!-- Galería de ropa -->
+    <!-- Galería de ropa en slider -->
     <section class="container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center text-[#EDCB50]">👕 Ropa Oficial</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-            <img src="CAMISETA_JUGADOR-Photoroom.png" class="w-full rounded-lg shadow-lg">
-            <img src="back-shirt.png" class="w-full rounded-lg shadow-lg">
-            <img src="front-shirt.png" class="w-full rounded-lg shadow-lg">
-            <img src="right_shirt.png" class="w-full rounded-lg shadow-lg">
-            <img src="left-shirt.png" class="w-full rounded-lg shadow-lg">
-        </div>
-    </section>
-
-    <!-- Redes sociales -->
-    <section class="container mx-auto py-10 text-center">
-        <h2 class="text-3xl font-bold text-[#EDCB50]">📱 Nuestras Redes</h2>
-        <p class="mt-4">Síguenos y forma parte de la comunidad Rising Raimon.</p>
-        <div class="flex justify-center space-x-6 mt-6">
-            <a href="https://www.youtube.com/@RisingRaimon" class="text-3xl">🎥 YouTube</a>
-            <a href="https://www.tiktok.com/@risingraimon" class="text-3xl">🎵 TikTok</a>
-            <a href="https://www.instagram.com/risingraimon/" class="text-3xl">📷 Instagram</a>
+        <div class="relative overflow-hidden w-full max-w-3xl mx-auto">
+            <div id="slider" class="flex transition-transform duration-300">
+                <img src="CAMISETA_JUGADOR-Photoroom.png" class="w-full rounded-lg shadow-lg">
+                <img src="back-shirt.png" class="w-full rounded-lg shadow-lg">
+                <img src="front-shirt.png" class="w-full rounded-lg shadow-lg">
+                <img src="right_shirt.png" class="w-full rounded-lg shadow-lg">
+                <img src="left-shirt.png" class="w-full rounded-lg shadow-lg">
+            </div>
+            <button onclick="moverSlider(-1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-lg">⬅️</button>
+            <button onclick="moverSlider(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-lg">➡️</button>
         </div>
     </section>
 
     <!-- Instalaciones -->
     <section class="container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center text-[#EDCB50]">🏟️ Instalaciones</h2>
+        <p class="text-center text-lg mt-2">📍 C. de Arroyo de Valdecelada, Carabanchel, 28019 Madrid</p>
         <img src="Captura%20de%20pantalla%202025-04-10%20100539.png" class="w-full rounded-lg shadow-lg mt-6">
     </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white text-center py-6">
+        <p>© 2025 Rising Raimon | Contacto: info@risingraimon.es | Patrocinadores: [Tu lista de patrocinadores]</p>
+    </footer>
+
+    <script>
+        let index = 0;
+        function moverSlider(direction) {
+            const slider = document.getElementById('slider');
+            index += direction;
+            const maxIndex = slider.children.length - 3;
+            if (index < 0) index = 0;
+            if (index > maxIndex) index = maxIndex;
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>
 
 </body>
 </html>

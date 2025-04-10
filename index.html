@@ -3,156 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTICIAS REVEAL</title>
+    <title>Únete a Rising Raimon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            background-color: #3A68A8; /* Fondo de la página */
-            color: #333;
-        }
-
-        header {
-            background-color: #E7CE74; /* Fondo de la cabecera */
-            color: #3A68A8; /* Color de las letras */
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold; /* Negrita */
-            text-transform: uppercase; /* Mayúsculas */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .intro {
-            margin: 20px auto;
-            text-align: center;
-            font-size: 22px;
-            max-width: 800px;
-            color: #EDCB50; /* Color del texto de introducción */
-            font-weight: bold; /* Negrita */
-            text-transform: uppercase; /* Mayúsculas */
-        }
-
-        .card-container {
-            display: flex;
-            justify-content: center;
-            gap: 60px; /* Espacio entre las tarjetas */
-            margin: 40px auto;
-            max-width: 1200px;
-        }
-
-        .card {
-            width: 300px; /* Tamaño más grande */
-            height: 300px;
-            perspective: 1000px;
-            cursor: pointer;
-            border: 3px solid #3A68A8; /* Borde de las tarjetas */
-        }
-
-        .card-inner {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.8s ease-in-out;
-        }
-
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .card-front,
-        .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center; /* Centrar texto */
-            font-size: 26px; /* Letras más grandes */
-            font-weight: bold; /* Negrita */
-            padding: 20px;
-            box-sizing: border-box; /* Asegura que el tamaño incluye bordes y relleno */
-        }
-
-        .card-front {
-            background-color: #4caf50; /* Verde */
-            color: white;
-        }
-
-        .card-back {
-            transform: rotateY(180deg);
-            background-color: #2e7d32; /* Verde más oscuro */
-            color: white;
-        }
-
-        .yellow .card-front {
-            background-color: #ffeb3b; /* Amarillo */
-            color: black;
-        }
-
-        .yellow .card-back {
-            background-color: #fbc02d; /* Amarillo más oscuro */
-        }
-
-        .red .card-front {
-            background-color: #f44336; /* Rojo */
-            color: white;
-        }
-
-        .red .card-back {
-            background-color: #c62828; /* Rojo más oscuro */
         }
     </style>
 </head>
-<body>
-    <header>
-        ¡EL VILLA AL RESCATE!
-    </header>
+<body class="bg-[#3A68A8] text-white">
 
-    <div class="intro">
-        EL CLUB, VILLA DE MADRID, LANZA UN SALVAVIDAS A UN RISING RAIMON QUE, LLEVABA LUCHANDO DURANTE DÍAS POR NO HUNDIRSE CON EL RESTO DE VÍCTIMAS DEL TRÁGICO NAUFRAGIO SUFRIDO POR LA TEMPORADA 25/26.
-    </div>
+    <!-- Hero -->
+    <section class="text-center py-20 bg-cover bg-center" style="background-image: url('https://github.com/Warzack03/timer/blob/main/POSE_CARTEL_FINAL.png');">
+        <div class="container mx-auto">
+            <img src="https://github.com/Warzack03/timer/blob/main/ESCUDO.png" alt="Escudo Rising Raimon" class="mx-auto w-32 h-32">
+            <h1 class="text-5xl font-bold mt-4 text-[#EDCB50]">¡Únete a Rising Raimon!</h1>
+            <p class="mt-3 text-lg text-[#E7CE74]">Forma parte del mejor equipo, sin importar tu nivel.</p>
+        </div>
+    </section>
 
-    <div class="card-container">
-        <div class="card green">
-            <div class="card-inner">
-                <div class="card-front">¿QUÉ NOS OFRECE?</div>
-                <div class="card-back">
-                    <ul>
-                        <li>HORARIOS MENCIONADOS</li>
-                        <li>NO ESCUDO</li>
-                        <li>GRATIS</li>
-                    </ul>
+    <!-- Formulario -->
+    <section class="container mx-auto py-10">
+        <div class="bg-white text-black p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+            <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Regístrate ahora</h2>
+            <form action="TU_ENDPOINT_AQUI" method="POST" class="mt-6">
+                <div class="mb-4">
+                    <label for="nombre" class="block font-bold">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required class="w-full border rounded-lg p-2">
                 </div>
-            </div>
-        </div>
-        <div class="card yellow">
-            <div class="card-inner">
-                <div class="card-front">COSAS A TENER EN CUENTA</div>
-                <div class="card-back">
-                    <ul>
-                        <li>HORARIOS EXTRA</li>
-                        <li>JUGADORES</li>
-                        <li>NOMBRE ¿SÓLO INSCRIPCIÓN?</li>
-                    </ul>
+                <div class="mb-4">
+                    <label for="email" class="block font-bold">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required class="w-full border rounded-lg p-2">
                 </div>
-            </div>
-        </div>
-        <div class="card red">
-            <div class="card-inner">
-                <div class="card-front">REQUISITOS</div>
-                <div class="card-back">
-                    <ul>
-                        <li>NOMBRE</li>
-                    </ul>
+                <div class="mb-4">
+                    <label for="telefono" class="block font-bold">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required class="w-full border rounded-lg p-2">
                 </div>
-            </div>
+                <div class="mb-4">
+                    <label for="edad" class="block font-bold">Edad:</label>
+                    <input type="number" id="edad" name="edad" required class="w-full border rounded-lg p-2">
+                </div>
+                <div class="mb-4">
+                    <label for="genero" class="block font-bold">Género:</label>
+                    <select id="genero" name="genero" required class="w-full border rounded-lg p-2">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos" class="font-bold">Acepto los términos y condiciones</label>
+                </div>
+                <button type="submit" class="w-full bg-[#EDCB50] text-black font-bold py-2 rounded-lg">Enviar</button>
+            </form>
         </div>
-    </div>
+    </section>
+
 </body>
 </html>

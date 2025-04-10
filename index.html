@@ -15,9 +15,16 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
+        html, body {
+            overflow: scroll;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari y Edge */
+        }
        body {
             font-family: 'Arial', sans-serif;
-            overflow: hidden;
         }
         h2 {
             text-align: center;
@@ -32,9 +39,9 @@
         
         /* Slider */
         .swiper-container {
+            position: relative; /* Asegura que los botones se posicionen respecto al slider */
             width: 100%;
             max-width: 700px;
-            overflow: hidden;
             margin: 0 auto;
         }
         .swiper-slide {
@@ -50,7 +57,7 @@
         .swiper-button-next {
             width: 50px;
             height: 50px;
-            background-image: url('circulo-de-flecha.png'); /* Usa la imagen correcta */
+            background-image: url('https://github.com/Warzack03/timer/blob/main/circulo-de-flecha.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -58,16 +65,16 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            z-index: 10;
+            z-index: 100; /* Asegura que estén sobre el slider */
         }
         
         .swiper-button-prev {
-            left: -60px;
-            transform: rotate(180deg); /* Rotar para que apunte correctamente */
+            left: 10px;
+            transform: rotate(180deg); /* Asegurar que la flecha apunte a la izquierda */
         }
         
         .swiper-button-next {
-            right: -60px;
+            right: 10px;
         }
 
         /* Testimonials */
@@ -176,7 +183,8 @@
                 <div class="swiper-slide"><img src="right_shirt.png"></div>
                 <div class="swiper-slide"><img src="left-shirt.png"></div>
             </div>
-            <div class="swiper-button-prev"><img src="circulo-de-flecha.png"></div>
+            <!-- Botones de navegación dentro del slider -->
+            <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
     </section>

@@ -14,12 +14,13 @@
 <body class="bg-[#3A68A8] text-white">
 
     <!-- Hero -->
-    <section class="relative text-center py-20 bg-cover bg-center flex items-center justify-center" style="background-image: url('Pose_cartel_final.png'); height: 80vh;">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative z-10">
-            <img src="ESCUDO.png" alt="Escudo Rising Raimon" class="mx-auto w-40 h-40">
+    <section class="relative text-center py-24 bg-cover bg-center flex items-center justify-center" style="background-image: url('Pose_cartel_final.png'); height: 90vh;">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10 text-center">
+            <img src="ESCUDO.png" alt="Escudo Rising Raimon" class="mx-auto w-48 h-48 animate-pulse">
             <h1 class="text-6xl font-bold mt-4 text-[#EDCB50] drop-shadow-lg">¡Únete a Rising Raimon!</h1>
             <p class="mt-3 text-2xl text-[#E7CE74] font-semibold">Forma parte del mejor equipo, sin importar tu nivel.</p>
+            <button class="mt-6 bg-[#EDCB50] text-[#3A68A8] font-bold py-3 px-6 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50] text-xl">Inscríbete ahora</button>
         </div>
     </section>
 
@@ -29,11 +30,11 @@
             <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Regístrate ahora</h2>
             <form action="TU_ENDPOINT_AQUI" method="POST" class="mt-6">
                 <div class="mb-4">
-                    <label for="nombre" class="block font-bold">Nombre:</label>
+                    <label for="nombre" class="block font-bold">Nombre <span class="text-red-500">*</span>:</label>
                     <input type="text" id="nombre" name="nombre" required class="w-full border rounded-lg p-2">
                 </div>
                 <div class="mb-4">
-                    <label for="email" class="block font-bold">Correo Electrónico:</label>
+                    <label for="email" class="block font-bold">Correo Electrónico <span class="text-red-500">*</span>:</label>
                     <input type="email" id="email" name="email" required class="w-full border rounded-lg p-2">
                 </div>
                 <div class="mb-4">
@@ -41,11 +42,11 @@
                     <input type="tel" id="telefono" name="telefono" class="w-full border rounded-lg p-2">
                 </div>
                 <div class="mb-4">
-                    <label for="edad" class="block font-bold">Edad:</label>
+                    <label for="edad" class="block font-bold">Edad <span class="text-red-500">*</span>:</label>
                     <input type="number" id="edad" name="edad" required class="w-full border rounded-lg p-2">
                 </div>
                 <div class="mb-4">
-                    <label for="genero" class="block font-bold">Género:</label>
+                    <label for="genero" class="block font-bold">Género <span class="text-red-500">*</span>:</label>
                     <select id="genero" name="genero" required class="w-full border rounded-lg p-2">
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
@@ -59,6 +60,35 @@
                 <button type="submit" class="w-full bg-[#EDCB50] text-[#3A68A8] font-bold py-2 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50]">Enviar</button>
             </form>
         </div>
+    </section>
+
+    <!-- Galería de ropa -->
+    <section class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center text-[#EDCB50]">👕 Ropa Oficial</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+            <img src="CAMISETA_JUGADOR-Photoroom.png" class="w-full rounded-lg shadow-lg">
+            <img src="back-shirt.png" class="w-full rounded-lg shadow-lg">
+            <img src="front-shirt.png" class="w-full rounded-lg shadow-lg">
+            <img src="right_shirt.png" class="w-full rounded-lg shadow-lg">
+            <img src="left-shirt.png" class="w-full rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- Redes sociales -->
+    <section class="container mx-auto py-10 text-center">
+        <h2 class="text-3xl font-bold text-[#EDCB50]">📱 Nuestras Redes</h2>
+        <p class="mt-4">Síguenos y forma parte de la comunidad Rising Raimon.</p>
+        <div class="flex justify-center space-x-6 mt-6">
+            <a href="https://www.youtube.com/@RisingRaimon" class="text-3xl">🎥 YouTube</a>
+            <a href="https://www.tiktok.com/@risingraimon" class="text-3xl">🎵 TikTok</a>
+            <a href="https://www.instagram.com/risingraimon/" class="text-3xl">📷 Instagram</a>
+        </div>
+    </section>
+
+    <!-- Instalaciones -->
+    <section class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center text-[#EDCB50]">🏟️ Instalaciones</h2>
+        <img src="Captura%20de%20pantalla%202025-04-10%20100539.png" class="w-full rounded-lg shadow-lg mt-6">
     </section>
 
 </body>

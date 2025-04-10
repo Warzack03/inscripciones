@@ -127,6 +127,45 @@
         .testimonial-card .font-bold {
             color: #3A68A8;
         }
+
+        /* Formularios en móviles */
+        @media screen and (max-width: 768px) {
+            video {
+                height: 70%; /* Reduce el tamaño en móviles */
+            }
+        
+            #formulario {
+                padding: 20px;
+                max-width: 90%;
+            }
+        }
+        
+        /* Slider responsive */
+        @media screen and (max-width: 768px) {
+            .swiper-container {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+        
+            .swiper-button-prev, .swiper-button-next {
+                width: 25px;
+                height: 25px;
+            }
+        }
+        
+        /* Testimonios en pantallas pequeñas */
+        @media screen and (max-width: 768px) {
+            .testimonials-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        
+            .testimonial-card {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#3A68A8] text-white">

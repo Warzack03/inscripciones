@@ -262,6 +262,27 @@
                         <option value="Otro">Otro</option>
                     </select>
                 </div>
+                <!-- Nueva pregunta para disponibilidad y franja horaria -->
+                <div class="mb-4">
+                    <label for="disponibilidad" class="block font-bold">Disponibilidad entrenamientos<span class="text-red-500">*</span>:</label>
+                    <div class="flex space-x-2">
+                        <select id="dia_disponible" name="dia_disponible" required class="w-1/2 border rounded-lg p-2">
+                            <option value="">Día de la semana</option>
+                            <option value="Lunes">Lunes</option>
+                            <option value="Martes">Martes</option>
+                            <option value="Miércoles">Miércoles</option>
+                            <option value="Jueves">Jueves</option>
+                            <option value="Viernes">Viernes</option>
+                        </select>
+                        <select id="franja_horaria" name="franja_horaria" required class="w-1/2 border rounded-lg p-2">
+                            <option value="">Franja Horaria</option>
+                            <option value="16+">16:00 en adelante</option>
+                            <option value="17+">17:00 en adelante</option>
+                            <option value="18+">18:00 en adelante</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="mb-4">
                     <input type="checkbox" id="terminos" name="terminos" required>
                     <label for="terminos" class="font-bold">Acepto los <a href="https://risingraimon.es/privacy-policy/" class="text-[#3A68A8] underline">términos y condiciones</a></label>
@@ -276,11 +297,36 @@
         <h2 class="text-3xl font-bold text-[#EDCB50]">PACK DE ROPA</h2>
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="CAMISETA_JUGADOR-Photoroom.png"></div>
-                <div class="swiper-slide"><img src="back-shirt.png"></div>
-                <div class="swiper-slide"><img src="front-shirt.png"></div>
-                <div class="swiper-slide"><img src="right_shirt.png"></div>
-                <div class="swiper-slide"><img src="left-shirt.png"></div>
+                <div class="swiper-slide">
+                    <figure class="flex flex-col items-center">
+                        <img src="CAMISETA_JUGADOR-Photoroom.png" alt="Camiseta de Jugador">
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de Jugador</figcaption>
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="flex flex-col items-center">
+                        <img src="back-shirt.png" alt="Vista Trasera">
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Vista Trasera</figcaption>
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="flex flex-col items-center">
+                        <img src="front-shirt.png" alt="Vista Frontal">
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Vista Frontal</figcaption>
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="flex flex-col items-center">
+                        <img src="right_shirt.png" alt="Lado Derecho">
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Lado Derecho</figcaption>
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="flex flex-col items-center">
+                        <img src="left-shirt.png" alt="Lado Izquierdo">
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Lado Izquierdo</figcaption>
+                    </figure>
+                </div>
             </div>
             <!-- Botones de navegación dentro del slider -->
             <div class="swiper-button-prev"></div>

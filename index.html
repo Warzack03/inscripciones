@@ -264,24 +264,58 @@
                 </div>
                 <!-- Nueva pregunta para disponibilidad y franja horaria -->
                 <div class="mb-4">
-                    <label for="disponibilidad" class="block font-bold">
-                        Disponibilidad entrenamientos<span class="text-red-500">*</span>:
+                    <label class="block font-bold">
+                        Disponibilidad entrenamientos <span class="text-red-500">*</span>:
                     </label>
-                    <div class="flex space-x-2">
-                        <select id="dia_disponible" name="dia_disponible[]" multiple required class="w-1/2 border rounded-lg p-2">
-                            <option value="Lunes">Lunes</option>
-                            <option value="Martes">Martes</option>
-                            <option value="Miércoles">Miércoles</option>
-                            <option value="Jueves">Jueves</option>
-                            <option value="Viernes">Viernes</option>
-                        </select>
-                        <select id="franja_horaria" name="franja_horaria" required class="w-1/2 border rounded-lg p-2">
-                            <option value="" disabled selected hidden>Franja Horaria</option>
-                            <option value="16+">16:00 en adelante</option>
-                            <option value="17+">17:00 en adelante</option>
-                            <option value="18+">18:00 en adelante</option>
-                            <option value="Otro">Otro</option>
-                        </select>
+                    <div class="flex space-x-4">
+                        <!-- Días disponibles con checkboxes -->
+                        <div class="w-1/2 border rounded-lg p-2">
+                            <span class="block font-bold mb-2">Días Disponibles</span>
+                            <div class="flex flex-col space-y-1">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="dia_disponible_lunes" value="Lunes" class="mr-1">
+                                    Lunes
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="dia_disponible_martes" value="Martes" class="mr-1">
+                                    Martes
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="dia_disponible_miercoles" value="Miércoles" class="mr-1">
+                                    Miércoles
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="dia_disponible_jueves" value="Jueves" class="mr-1">
+                                    Jueves
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="dia_disponible_viernes" value="Viernes" class="mr-1">
+                                    Viernes
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Franja horaria con radio buttons -->
+                        <div class="w-1/2 border rounded-lg p-2">
+                            <span class="block font-bold mb-2">Franja Horaria</span>
+                            <div class="flex flex-col space-y-1">
+                                <label class="flex items-center">
+                                    <input type="radio" name="franja_horaria" value="16+" required class="mr-1">
+                                    16:00 en adelante
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="franja_horaria" value="17+" class="mr-1">
+                                    17:00 en adelante
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="franja_horaria" value="18+" class="mr-1">
+                                    18:00 en adelante
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="franja_horaria" value="Otro" class="mr-1">
+                                    Otro
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="mb-4">
@@ -301,31 +335,31 @@
                 <div class="swiper-slide">
                     <figure class="flex flex-col items-center">
                         <img src="CAMISETA_JUGADOR-Photoroom.png" alt="Camiseta de Jugador">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de Jugador</figcaption>
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de partido</figcaption>
                     </figure>
                 </div>
                 <div class="swiper-slide">
                     <figure class="flex flex-col items-center">
                         <img src="back-shirt.png" alt="Vista Trasera">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Vista Trasera</figcaption>
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Pantalon de partido</figcaption>
                     </figure>
                 </div>
                 <div class="swiper-slide">
                     <figure class="flex flex-col items-center">
                         <img src="front-shirt.png" alt="Vista Frontal">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Vista Frontal</figcaption>
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de entrenamiento</figcaption>
                     </figure>
                 </div>
                 <div class="swiper-slide">
                     <figure class="flex flex-col items-center">
                         <img src="right_shirt.png" alt="Lado Derecho">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Lado Derecho</figcaption>
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Pantalon de entrenamiento</figcaption>
                     </figure>
                 </div>
                 <div class="swiper-slide">
                     <figure class="flex flex-col items-center">
                         <img src="left-shirt.png" alt="Lado Izquierdo">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Lado Izquierdo</figcaption>
+                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Chándal de entrenamiento</figcaption>
                     </figure>
                 </div>
             </div>

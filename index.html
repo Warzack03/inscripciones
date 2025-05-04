@@ -71,17 +71,10 @@
           border: none;
           color: black;
           font-size: 16px;
+          margin-bottom: 10px;
           cursor: pointer;
         }
-        #categorySelect option {
-          padding: 10px 20px;
-          border: none;
-          color: black;
-          background-color: white;
-          font-size: 16px;
-          cursor: pointer;
-        }
-         #categorySelect option:hover {
+         #categorySelect select:hover {
           padding: 10px 20px;
           border: none;
           background-color: #3A68A8;
@@ -322,7 +315,7 @@
           <option value="Juvenil">Juvenil (17-19 años)</option>
           <option value="Sénior">Sénior (20 años y mayores)</option>
         </select>
-        <button class="font-bold" type="submit" onClick="">Enviar</button>
+        <button class="font-bold" type="submit" onClick="mostrarForm()">Enviar</button>
       </section>
     
       <!-- Contenido para menores (nacidos en 2006 o posteriores) -->

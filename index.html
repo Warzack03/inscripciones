@@ -29,6 +29,53 @@
         h2 {
             text-align: center;
         }
+        /* Estilo para la sección del formulario */
+        #form-section {
+          background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+          border: 1px solid #bbb;
+          padding: 30px;
+          margin: 40px auto;
+          max-width: 400px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          text-align: center;
+        }
+        #form-section p {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          color: #333;
+        }
+        #form-section input[type="number"] {
+          width: 80%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #aaa;
+          border-radius: 4px;
+          font-size: 16px;
+        }
+        #form-section button {
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          border: none;
+          color: #fff;
+          font-size: 16px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        #form-section button:hover {
+          background-color: #45a049;
+        }
+        /* Estilos para las secciones variables */
+        section.hidden {
+          display: none;
+        }
+        section:not(.hidden) {
+          padding: 20px;
+          margin: 20px auto;
+          max-width: 800px;
+        }
 
         /* Video hero */
         video {

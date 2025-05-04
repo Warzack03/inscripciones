@@ -70,6 +70,27 @@
           background-color: #3A68A8;
           color: #EDCB50;
         }
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: linear-gradient(45deg, #1c1c1c, #333);
+          border: 1px solid #fff;
+          color: #fff;
+          padding: 10px 35px 10px 10px;
+          border-radius: 5px;
+          font-size: 1rem;
+          background-image: url("data:image/svg+xml;charset=US-ASCII, %3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5' viewBox='0 0 10 5'%3E%3Cpath fill='%23fff' d='M0 0l5 5 5-5z'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+          background-size: 10px 5px;
+          margin-bottom: 15px;
+        }
+        
+        select:focus {
+          border-color: #999;
+          outline: none;
+        }
         /* Estilos para las secciones variables */
         section.hidden {
           display: none;
@@ -288,7 +309,6 @@
 
     <!-- Sección para capturar el año de nacimiento -->
       <section id="form-section">
-        <p>¿Qué categoría eres?</p>
         <label for="categorySelect">¿Cuál es tu categoría?</label>
         <select id="categorySelect" name="categoria">
           <option value="Debutantes">Debutantes (3-5 años)</option>
@@ -572,9 +592,9 @@
     
           // Mostramos el formulario adecuado según la selección
           if(categoriaSeleccionada === "Sénior") {
-            document.getElementById('seniorForm').style.display = 'block';
+            document.getElementById('adult').style.display = 'block';
           } else {
-            document.getElementById('otherForm').style.display = 'block';
+            document.getElementById('minor').style.display = 'block';
           }
         });
         var swiper = new Swiper('.swiper-container', {

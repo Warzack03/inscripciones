@@ -256,6 +256,10 @@
                 align-items: center;
                 gap: 15px;
             }
+
+            video {
+                display: none;
+            }
         
             .testimonial-card {
                 width: 90%;
@@ -284,18 +288,27 @@
 
     <!-- Sección para capturar el año de nacimiento -->
       <section id="form-section">
-        <p>¿En qué año naciste?</p>
-        <input type="number" id="year-input" placeholder="Escribe tu año de nacimiento">
-        <button class="font-bold" type="submit" onclick="checkAge()">Enviar</button>
+        <p>¿Qué categoría eres?</p>
+        <label for="categorySelect">¿Cuál es tu categoría?</label>
+        <select id="categorySelect" name="categoria">
+          <option value="Debutantes">Debutantes (3-5 años)</option>
+          <option value="Prebenjamín">Prebenjamín (5-8 años)</option>
+          <option value="Benjamín">Benjamín (9-10 años)</option>
+          <option value="Alevín">Alevín (11-12 años)</option>
+          <option value="Infantil">Infantil (13-14 años)</option>
+          <option value="Cadete">Cadete (15-16 años)</option>
+          <option value="Juvenil">Juvenil (17-19 años)</option>
+          <option value="Sénior">Sénior (20 años y mayores)</option>
+        </select>
+        <button class="font-bold" type="submit">Enviar</button>
       </section>
     
       <!-- Contenido para menores (nacidos en 2006 o posteriores) -->
       <section id="minor" class="hidden">
-        <h2>Inscripciones e información para menores</h2>
         <!-- Formulario -->
         <section id="formulario" class="container mx-auto py-10">
             <div class="bg-white text-black p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
-                <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Déjanos tus datos y te contactaremos pronto!</h2>
+                <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Formulario para categorías inferiores || Déjanos tus datos y te contactaremos pronto!</h2>
                 <form action="https://usebasin.com/f/f37101bab327" method="POST" class="mt-6">
                     <div class="mb-4">
                         <label for="nombre" class="block font-bold">Nombre: <span class="text-red-500">*</span> </label>
@@ -437,12 +450,10 @@
     
       <!-- Contenido para mayores (nacidos antes de 2006) -->
       <section id="adult" class="hidden">
-        <h2>Inscripciones e información para mayores</h2>
-
         <!-- Formulario -->
         <section id="formulario" class="container mx-auto py-10">
             <div class="bg-white text-black p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
-                <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Déjanos tus datos y te contactaremos pronto!</h2>
+                <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Formulario para categorías senior || Déjanos tus datos y te contactaremos pronto!</h2>
                 <form action="https://usebasin.com/f/2288184f85a6" method="POST" class="mt-6">
                     <div class="mb-4">
                         <label for="nombre" class="block font-bold">Nombre: <span class="text-red-500">*</span> </label>
@@ -507,12 +518,6 @@
                 <div class="swiper-button-next"></div>
             </div>
         </section>
-        <!-- Instalaciones -->
-        <section class="container mx-auto py-10">
-            <h2 class="text-3xl font-bold text-center text-[#EDCB50]">LOCALIZACIÓN</h2>
-            <p class="text-center text-lg mt-2">📍 Av. de los Poblados, 72, Latina, 28044 Madrid</p>
-            <img src="las_cruces.jpg" class="w-full rounded-lg shadow-lg mt-6">
-        </section>
       </section>
 
     <section class="social-section">
@@ -552,26 +557,26 @@
 
     <!-- Footer -->
     <footer class="bg-black text-white text-center py-6">
-        <p>© 2025 Rising Raimon | Contacto: risingraimon@gmail.com | Patrocinadores: [Tu lista de patrocinadores]</p>
+        <p>©2025 Rising Raimon | Contacto: risingraimon@gmail.com | 627 110 559 (Sara) ó 673 705 312 (Aarón) | Patrocinadores: Charly's Cave, </p>
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        function checkAge() {
-          // Obtener el valor del input y convertirlo a número
-          const year = parseInt(document.getElementById('year-input').value, 10);
-          
-          // Ocultar la sección del formulario
-          document.getElementById('form-section').classList.add('hidden');
-          
-          // Mostrar la sección correspondiente según el año
-          // Si el año es 2006 o mayor, se asume que es menor (menos de edad)
-          if (year >= 2006) {
-            document.getElementById('minor').classList.remove('hidden');
+        // Al envío del formulario de categoría...
+        document.getElementById('categoryForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          const categoriaSeleccionada = document.getElementById('categorySelect').value;
+    
+          // Ocultamos el formulario inicial
+          document.getElementById('categoryForm').style.display = 'none';
+    
+          // Mostramos el formulario adecuado según la selección
+          if(categoriaSeleccionada === "Sénior") {
+            document.getElementById('seniorForm').style.display = 'block';
           } else {
-            document.getElementById('adult').classList.remove('hidden');
+            document.getElementById('otherForm').style.display = 'block';
           }
-        }
+        });
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 2,
             spaceBetween: 30,

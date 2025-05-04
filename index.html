@@ -66,19 +66,6 @@
           cursor: pointer;
           transition: background-color 0.3s ease;
         }
-         #categorySelect {
-          padding: 10px 20px;
-          border: none;
-          color: black;
-          font-size: 16px;
-          margin-bottom: 10px;
-          cursor: pointer;
-        }
-        
-        #categorySelect:hover {
-          background-color: #3A68A8;
-          color: #EDCB50;
-        }
         #form-section button:hover {
           background-color: #3A68A8;
           color: #EDCB50;
@@ -238,7 +225,7 @@
         /* Formularios en móviles */
         @media screen and (max-width: 768px) {
             video {
-                height: 100% !important; /* Reduce el tamaño en móviles */
+                display: none !important;
             }
         
             #formulario {
@@ -268,10 +255,6 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
-            }
-
-            video {
-                display: none;
             }
         
             .testimonial-card {
@@ -310,7 +293,7 @@
           <option value="Infantil">Infantil (13-14 años)</option>
           <option value="Cadete">Cadete (15-16 años)</option>
           <option value="Juvenil">Juvenil (17-19 años)</option>
-          <option value="Sénior">Sénior (20 años y mayores)</option>
+          <option value="Senior">Sénior (20 años y mayores)</option>
         </select>
         <button class="font-bold" type="button" onClick="mostrarForm()">Enviar</button>
       </section>
@@ -577,12 +560,13 @@
         function mostrarForm() {
           // Capturamos la categoría seleccionada
           const categoriaSeleccionada = document.getElementById('categorySelect').value;
+            console.log("Mi categoria: " + categoriaSeleccionada);
           
           // Ocultamos el formulario inicial (con el ID correcto)
           document.getElementById('categoryForm').style.display = 'none';
           
           // Mostramos el formulario adecuado según la opción seleccionada
-          if (categoriaSeleccionada === "Sénior") {
+          if (categoriaSeleccionada === "Senior") {
             document.getElementById('adult').style.display = 'block';
           } else {
             document.getElementById('minor').style.display = 'block';

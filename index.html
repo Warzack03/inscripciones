@@ -31,12 +31,12 @@
         }
         /* Estilo para la sección del formulario */
         #form-section {
-          background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+          background: #fff;
           border: 1px solid #bbb;
           padding: 30px;
           margin: 40px auto;
           max-width: 400px;
-          margin-top: 300px;
+          margin-top: 200px;
           border-radius: 10px;
           box-shadow: 0 4px 8px rgba(0,0,0,0.1);
           text-align: center;
@@ -54,7 +54,7 @@
           border: 1px solid #aaa;
           border-radius: 4px;
           font-size: 16px;
-          color: #EDCB50;
+          color: #000;
         }
         #form-section button {
           padding: 10px 20px;
@@ -74,11 +74,6 @@
         section.hidden {
           display: none;
         }
-/*         section:not(.hidden) {
-          padding: 20px;
-          margin: 20px auto;
-          max-width: 800px;
-        } */
 
         /* Video hero */
         video {
@@ -290,7 +285,7 @@
     <!-- Sección para capturar el año de nacimiento -->
       <section id="form-section">
         <p>¿En qué año naciste?</p>
-        <input type="number" id="year-input" placeholder="Escribe tu año de nacimiento">
+        <input type="number" id="year-input" class="block font-bold" placeholder="Escribe tu año de nacimiento">
         <button onclick="checkAge()">Enviar</button>
       </section>
     

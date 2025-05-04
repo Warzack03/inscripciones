@@ -237,139 +237,238 @@
         </div>
     </section>
 
-    <!-- Formulario -->
-    <section id="formulario" class="container mx-auto py-10">
-        <div class="bg-white text-black p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
-            <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Déjanos tus datos y te contactaremos pronto!</h2>
-            <form action="https://usebasin.com/f/f37101bab327" method="POST" class="mt-6">
-                <div class="mb-4">
-                    <label for="nombre" class="block font-bold">Nombre: <span class="text-red-500">*</span> </label>
-                    <input type="text" id="nombre" name="nombre" required class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block font-bold">Correo Electrónico: <span class="text-red-500">*</span> </label>
-                    <input type="email" id="email" name="email" required class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="telefono" class="block font-bold">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="edad" class="block font-bold">Año de nacimiento: <span class="text-red-500">*</span> </label>
-                    <input type="number" id="nacimiento" name="nacimiento" required class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="genero" class="block font-bold">Género: <span class="text-red-500">*</span> </label>
-                    <select id="genero" name="genero" required class="w-full border rounded-lg p-2">
-                        <option value="Masculino">Masculino</option>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                </div>
-                <!-- Nueva pregunta para disponibilidad y franja horaria -->
-                <div class="mb-4">
-                    <label class="block font-bold">Disponibilidad entrenamientos: <span class="text-red-500">*</span> </label>
-                    <div class="flex space-x-4">
-                        <!-- Días disponibles con checkboxes -->
-                        <div class="w-1/2 border rounded-lg p-2">
-                            <span class="block font-bold mb-2">Días Disponibles</span>
-                            <div class="flex flex-col space-y-1">
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="dia_disponible_lunes" value="Lunes" class="mr-1">
-                                    Lunes
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="dia_disponible_martes" value="Martes" class="mr-1">
-                                    Martes
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="dia_disponible_miercoles" value="Miércoles" class="mr-1">
-                                    Miércoles
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="dia_disponible_jueves" value="Jueves" class="mr-1">
-                                    Jueves
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="dia_disponible_viernes" value="Viernes" class="mr-1">
-                                    Viernes
-                                </label>
+    <!-- Sección para capturar el año de nacimiento -->
+      <section id="form-section">
+        <p>¿En qué año naciste?</p>
+        <input type="number" id="year-input" placeholder="Escribe tu año de nacimiento">
+        <button onclick="checkAge()">Enviar</button>
+      </section>
+    
+      <!-- Contenido para menores (nacidos en 2006 o posteriores) -->
+      <section id="minor" class="hidden">
+        <h2>Inscripciones e información para menores</h2>
+        <!-- Formulario -->
+        <section id="formulario" class="container mx-auto py-10">
+            <div class="bg-white text-black p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
+                <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Déjanos tus datos y te contactaremos pronto!</h2>
+                <form action="https://usebasin.com/f/f37101bab327" method="POST" class="mt-6">
+                    <div class="mb-4">
+                        <label for="nombre" class="block font-bold">Nombre: <span class="text-red-500">*</span> </label>
+                        <input type="text" id="nombre" name="nombre" required class="w-full border rounded-lg p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block font-bold">Correo Electrónico: <span class="text-red-500">*</span> </label>
+                        <input type="email" id="email" name="email" required class="w-full border rounded-lg p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="telefono" class="block font-bold">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" class="w-full border rounded-lg p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="edad" class="block font-bold">Año de nacimiento: <span class="text-red-500">*</span> </label>
+                        <input type="number" id="nacimiento" name="nacimiento" required class="w-full border rounded-lg p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="genero" class="block font-bold">Género: <span class="text-red-500">*</span> </label>
+                        <select id="genero" name="genero" required class="w-full border rounded-lg p-2">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <!-- Nueva pregunta para disponibilidad y franja horaria -->
+                    <div class="mb-4">
+                        <label class="block font-bold">Disponibilidad entrenamientos: <span class="text-red-500">*</span> </label>
+                        <div class="flex space-x-4">
+                            <!-- Días disponibles con checkboxes -->
+                            <div class="w-1/2 border rounded-lg p-2">
+                                <span class="block font-bold mb-2">Días Disponibles</span>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="dia_disponible_lunes" value="Lunes" class="mr-1">
+                                        Lunes
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="dia_disponible_martes" value="Martes" class="mr-1">
+                                        Martes
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="dia_disponible_miercoles" value="Miércoles" class="mr-1">
+                                        Miércoles
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="dia_disponible_jueves" value="Jueves" class="mr-1">
+                                        Jueves
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="dia_disponible_viernes" value="Viernes" class="mr-1">
+                                        Viernes
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Franja horaria con radio buttons -->
-                        <div class="w-1/2 border rounded-lg p-2">
-                            <span class="block font-bold mb-2">Franja Horaria</span>
-                            <div class="flex flex-col space-y-1">
-                                <label class="flex items-center">
-                                    <input type="radio" name="franja_horaria" value="16+" required class="mr-1">
-                                    16:00 en adelante
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="franja_horaria" value="17+" class="mr-1">
-                                    17:00 en adelante
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="franja_horaria" value="18+" class="mr-1">
-                                    18:00 en adelante
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="franja_horaria" value="Otro" class="mr-1">
-                                    Otro
-                                </label>
+                            <!-- Franja horaria con radio buttons -->
+                            <div class="w-1/2 border rounded-lg p-2">
+                                <span class="block font-bold mb-2">Franja Horaria</span>
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="franja_horaria" value="16+" required class="mr-1">
+                                        16:00 en adelante
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="franja_horaria" value="17+" class="mr-1">
+                                        17:00 en adelante
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="franja_horaria" value="18+" class="mr-1">
+                                        18:00 en adelante
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="franja_horaria" value="Otro" class="mr-1">
+                                        Otro
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="mb-4">
-                    <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos" class="font-bold">Acepto los <a href="https://risingraimon.es/privacy-policy/" class="text-[#3A68A8] underline">términos y condiciones</a></label>
-                </div>
-                <button type="submit" class="w-full bg-[#EDCB50] text-[#3A68A8] font-bold py-2 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50]">Enviar</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Slider de imágenes con Swiper.js centrado -->
-    <section class="container mx-auto py-10">
-        <h2 class="text-3xl font-bold text-[#EDCB50]">PACK DE ROPA</h2>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <figure class="flex flex-col items-center">
-                        <img src="CAMISETA_JUGADOR-Photoroom.png" alt="Camiseta de Jugador">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de partido</figcaption>
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="flex flex-col items-center">
-                        <img src="back-shirt.png" alt="Vista Trasera">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Pantalon de partido</figcaption>
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="flex flex-col items-center">
-                        <img src="front-shirt.png" alt="Vista Frontal">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de entrenamiento</figcaption>
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="flex flex-col items-center">
-                        <img src="right_shirt.png" alt="Lado Derecho">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Pantalon de entrenamiento</figcaption>
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="flex flex-col items-center">
-                        <img src="left-shirt.png" alt="Lado Izquierdo">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Chándal de entrenamiento</figcaption>
-                    </figure>
-                </div>
+                    <div class="mb-4">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos" class="font-bold">Acepto los <a href="https://risingraimon.es/privacy-policy/" class="text-[#3A68A8] underline">términos y condiciones</a></label>
+                    </div>
+                    <button type="submit" class="w-full bg-[#EDCB50] text-[#3A68A8] font-bold py-2 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50]">Enviar</button>
+                </form>
             </div>
-            <!-- Botones de navegación dentro del slider -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
+        </section>
+    
+        <!-- Slider de imágenes con Swiper.js centrado -->
+        <section class="container mx-auto py-10">
+            <h2 class="text-3xl font-bold text-[#EDCB50]">PACK DE ROPA</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <figure class="flex flex-col items-center">
+                            <img src="CAMISETA_JUGADOR-Photoroom.png" alt="Camiseta de Jugador">
+                            <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de partido</figcaption>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="flex flex-col items-center">
+                            <img src="back-shirt.png" alt="Vista Trasera">
+                            <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Pantalon de partido</figcaption>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="flex flex-col items-center">
+                            <img src="front-shirt.png" alt="Vista Frontal">
+                            <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de entrenamiento</figcaption>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="flex flex-col items-center">
+                            <img src="right_shirt.png" alt="Lado Derecho">
+                            <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Pantalon de entrenamiento</figcaption>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="flex flex-col items-center">
+                            <img src="left-shirt.png" alt="Lado Izquierdo">
+                            <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Chándal de entrenamiento</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!-- Botones de navegación dentro del slider -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+        
+        <!-- Instalaciones -->
+        <section class="container mx-auto py-10">
+            <h2 class="text-3xl font-bold text-center text-[#EDCB50]">INSTALACIONES</h2>
+            <p class="text-center text-lg mt-2">📍 C. de Arroyo de Valdecelada, Carabanchel, 28019 Madrid</p>
+            <img src="Captura%20de%20pantalla%202025-04-10%20100539.png" class="w-full rounded-lg shadow-lg mt-6">
+        </section>
+        <!-- Puedes incluir aquí el código que necesites para registros de menores -->
+      </section>
+    
+      <!-- Contenido para mayores (nacidos antes de 2006) -->
+      <section id="adult" class="hidden">
+        <h2>Inscripciones e información para mayores</h2>
+
+        <!-- Formulario -->
+        <section id="formulario" class="container mx-auto py-10">
+            <div class="bg-white text-black p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
+                <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Déjanos tus datos y te contactaremos pronto!</h2>
+                <form action="https://usebasin.com/f/2288184f85a6" method="POST" class="mt-6">
+                    <div class="mb-4">
+                        <label for="nombre" class="block font-bold">Nombre: <span class="text-red-500">*</span> </label>
+                        <input type="text" id="nombre" name="nombre" required class="w-full border rounded-lg p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block font-bold">Correo Electrónico: <span class="text-red-500">*</span> </label>
+                        <input type="email" id="email" name="email" required class="w-full border rounded-lg p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="telefono" class="block font-bold">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" class="w-full border rounded-lg p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="edad" class="block font-bold">Año de nacimiento: <span class="text-red-500">*</span> </label>
+                        <input type="number" id="nacimiento" name="nacimiento" required class="w-full border rounded-lg p-2">
+                    </div>
+                    <div class="mb-4">
+                        <label for="genero" class="block font-bold">Género: <span class="text-red-500">*</span> </label>
+                        <select id="genero" name="genero" required class="w-full border rounded-lg p-2">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos" class="font-bold">Acepto los <a href="https://risingraimon.es/privacy-policy/" class="text-[#3A68A8] underline">términos y condiciones</a></label>
+                    </div>
+                    <button type="submit" class="w-full bg-[#EDCB50] text-[#3A68A8] font-bold py-2 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50]">Enviar</button>
+                </form>
+            </div>
+        </section>
+          
+
+        <!-- Slider de imágenes con Swiper.js centrado -->
+        <section class="container mx-auto py-10">
+            <h2 class="text-3xl font-bold text-[#EDCB50]">PACK DE ROPA</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <figure class="flex flex-col items-center">
+                            <img src="CAMISETA_JUGADOR-Photoroom.png" alt="Camiseta de Jugador">
+                            <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de partido</figcaption>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="flex flex-col items-center">
+                            <img src="back-shirt.png" alt="Vista Trasera">
+                            <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Pantalon de partido</figcaption>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure class="flex flex-col items-center">
+                            <img src="left-shirt.png" alt="Lado Izquierdo">
+                            <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Chándal de entrenamiento</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!-- Botones de navegación dentro del slider -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+        <!-- Instalaciones -->
+        <section class="container mx-auto py-10">
+            <h2 class="text-3xl font-bold text-center text-[#EDCB50]">LOCALIZACIÓN</h2>
+            <p class="text-center text-lg mt-2">📍 Av. de los Poblados, 72, Latina, 28044 Madrid</p>
+            <img src="las_cruces.jpg" class="w-full rounded-lg shadow-lg mt-6">
+        </section>
+      </section>
 
     <section class="social-section">
         <h2 class="text-3xl font-bold text-center text-[#EDCB50]">REDES SOCIALES</h2>
@@ -387,13 +486,6 @@
                 <a href="https://www.instagram.com/risingraimon/" target="_blank">Instagram</a>
             </div>
         </div>
-    </section>
-    
-    <!-- Instalaciones -->
-    <section class="container mx-auto py-10">
-        <h2 class="text-3xl font-bold text-center text-[#EDCB50]">INSTALACIONES</h2>
-        <p class="text-center text-lg mt-2">📍 C. de Arroyo de Valdecelada, Carabanchel, 28019 Madrid</p>
-        <img src="Captura%20de%20pantalla%202025-04-10%20100539.png" class="w-full rounded-lg shadow-lg mt-6">
     </section>
 
     <!-- Testimonios -->
@@ -420,6 +512,21 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+        function checkAge() {
+          // Obtener el valor del input y convertirlo a número
+          const year = parseInt(document.getElementById('year-input').value, 10);
+          
+          // Ocultar la sección del formulario
+          document.getElementById('form-section').classList.add('hidden');
+          
+          // Mostrar la sección correspondiente según el año
+          // Si el año es 2006 o mayor, se asume que es menor (menos de edad)
+          if (year >= 2006) {
+            document.getElementById('minor').classList.remove('hidden');
+          } else {
+            document.getElementById('adult').classList.remove('hidden');
+          }
+        }
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 2,
             spaceBetween: 30,

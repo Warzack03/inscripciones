@@ -129,6 +129,13 @@
             cursor: pointer;
             z-index: 100; /* Asegura que estén sobre el slider */
         }
+        .swiper-slide img {
+            display: block;       /* Elimina posibles huecos de imágenes en línea */
+            width: 100%;          /* Se ajusta al ancho del contenedor */
+            height: 300px;        /* Fija una altura uniforme para todas */
+            object-fit: cover;    /* Ajusta la imagen llenando el contenedor (si prefieres ver la imagen completa, podrías usar 'contain') */
+            object-position: center;  /* Centra la imagen dentro del contenedor */
+        }
         .swiper-button-prev::after,
         .swiper-button-next::after {
             content: none; /* Elimina la imagen que Swiper.js aplica por defecto */

@@ -1,454 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Únete a Rising Raimon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Únete a Rising Raimon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <style>
-        html, body {
-            overflow: scroll;
-            scrollbar-width: none; /* Firefox */
-        }
-        
-        html::-webkit-scrollbar, body::-webkit-scrollbar {
-            display: none; /* Chrome, Safari y Edge */
-        }
-       body {
-            font-family: 'Arial', sans-serif;
-        }
-        h2 {
-            text-align: center;
-        }
-        .escudo {
-            width: 160px;
-        }
-        /* Estilo para la sección del formulario */
-        #form-section {
-          background: #fff;
-          border: 1px solid #bbb;
-          padding: 30px;
-          margin: 40px auto;
-          max-width: 400px;
-          margin-top: 200px;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-          text-align: center;
-        }
-        #form-section label {
-          font-size: 20px;
-          font-weight: bold;
-          margin-bottom: 20px;
-          color: #3A68A8;
-        }
-        #form-section input[type="number"] {
-          width: 80%;
-          padding: 10px;
-          margin-bottom: 20px;
-          border: 1px solid #aaa;
-          border-radius: 4px;
-          font-size: 16px;
-          color: #000;
-        }
-        #form-section button {
-          padding: 10px 20px;
-          background-color: #EDCB50;
-          border: none;
-          color: #3A68A8;
-          font-size: 16px;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-        }
-        #categorySelect {
-          padding: 10px 20px;
-          border: none;
-          color: black;
-          font-size: 16px;
-          margin-bottom: 10px;
-          cursor: pointer;
-        }
-        #form-section button:hover {
-          background-color: #3A68A8;
-          color: #EDCB50;
-        }
-        /* Estilos para las secciones variables */
-        section.hidden {
-          display: none;
-        }
-
-        /* Video hero */
-        video {
-            width: 100%;
-            height: 130% !important; /* Ajusta la altura para ocupar más espacio */
-            object-fit: cover;
-        }
-
-        /* Formulario */
-        #formulario {
-            margin-top: 6%;
-        }
-        
-        /* Slider */
-        .swiper-container {
-            position: relative; /* Asegura que los botones se posicionen respecto al slider */
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .slider-btn {
-            width: 40px;
-            cursor: pointer;
-        }
-        .swiper-button-prev,
-        .swiper-button-next {
-            width: 50px;
-            height: 50px;
-            background-image: url('circulo-de-flecha.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            z-index: 100; /* Asegura que estén sobre el slider */
-        }
-        .swiper-slide img {
-            display: block;       /* Elimina posibles huecos de imágenes en línea */
-            width: 100%;          /* Se ajusta al ancho del contenedor */
-            height: 400px;        /* Fija una altura uniforme para todas */
-            object-fit: cover;    /* Ajusta la imagen llenando el contenedor (si prefieres ver la imagen completa, podrías usar 'contain') */
-            object-position: center;  /* Centra la imagen dentro del contenedor */
-        }
-        .swiper-button-prev::after,
-        .swiper-button-next::after {
-            content: none; /* Elimina la imagen que Swiper.js aplica por defecto */
-        }
-        
-        .swiper-button-prev {
-            left: 20px;
-            transform: rotate(180deg); /* Asegurar que la flecha apunte a la izquierda */
-        }
-        
-        .swiper-button-next {
-            right: 20px;
-        }
-
-        .swiper-button-next figcaption {
-            text-align: center;
-        }
-
-        /* Testimonials */
-        .testimonials-contaiiner {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px; /* Espacio entre tarjetas */
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-            width: 300px; /* Tamaño uniforme */
-            text-align: center;
-        }
-        
-        .testimonial-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .testimonials h2 {
-            color: #EDCB50;
-        }
-        .testimonials {
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-card p {
-            color: black;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        .testimonial-card .font-bold {
-            color: #3A68A8;
-        }
-
-        /* Sección de redes sociales */
-        .social-section {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #3A68A8;
-        }
-        
-        .social-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .social-item {
-            display: flex;
-            align-items: center;
-            background-color: #3A68A8;
-            color: #EDCB50;
-            padding: 10px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .social-item:hover {
-            transform: scale(1.1);
-            background-color: #EDCB50;
-            color: #3A68A8;
-        }
-        
-        .social-item img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .social-item a {
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .social-item a:hover {
-            text-decoration: underline;
-        }
-
-
-        /* Formularios en móviles */
-        @media screen and (max-width: 768px) {
-            video {
-                display: none !important;
-            }
-        
-            #formulario {
-                margin-top: 10%;
-                padding: 20px;
-                max-width: 90%;
-            }
-
-            #form-section {
-                margin-top: 14%;
-            }
-        }
-        
-        /* Slider responsive */
-        @media screen and (max-width: 768px) {
-            .swiper-container {
-                max-width: 100%;
-                padding: 0 15px;
-            }
-        
-            .swiper-button-prev, .swiper-button-next {
-                width: 25px;
-                height: 25px;
-            }
-            
-            .swiper-slide img {
-                height: 200px;        /* Fija una altura uniforme para todas */
-            }
-        }
-        
-        /* Testimonios en pantallas pequeñas */
-        @media screen and (max-width: 768px) {
-             .escudo {
-                width: 100px;
-            }
-            .testimonials-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-        
-            .testimonial-card {
-                width: 90%;
-            }
-
-            h1 {
-                font-size: 42px !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripciones Rising Raimon</title>
+  <meta name="description" content="Accede a las inscripciones de Rising Raimon en Madrid y Cataluña. Elige tu sede y apúntate a las pruebas del club.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body class="bg-[#3A68A8] text-white">
-
-    <!-- Hero con video -->
-    <section class="relative text-center py-24 flex items-center justify-center">
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-            <source src="Highlights Generales Inscrpiciones.mp4" type="video/mp4">
-        </video>
-        <div class="relative z-10 text-center">
-            <img src="ESCUDO.png" alt="Escudo Rising Raimon" class="mx-auto animate-pulse escudo">
-            <h1 class="text-6xl font-bold mt-4 text-[#EDCB50] drop-shadow-lg animate__animated animate__fadeInDown">¡Ruge ya con Rising Raimon en Cataluña!</h1>
-            <p class="mt-3 text-2xl text-[#E7CE74] font-semibold animate__animated animate__fadeInUp">Forma parte del mejor equipo, sin importar tu nivel.</p>
-            <button onclick="document.getElementById('form-section').scrollIntoView({behavior: 'smooth'})" class="mt-6 bg-[#EDCB50] text-[#3A68A8] font-bold py-3 px-6 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50] text-xl animate__animated animate__infinite">Inscríbete ahora</button>
-        </div>
-    </section>
-    
-  <!-- Contenido para mayores (nacidos antes de 2006) -->
-  <section id="adult">
-    <!-- Formulario -->
-    <section id="formulario" class="container mx-auto py-10">
-        <div class="bg-white text-black p-8 rounded-lg shadow-2xl max-w-lg mx-auto">
-            <h2 class="text-3xl font-bold text-center text-[#3A68A8]">Formulario para categorías senior en Tarragona || Déjanos tus datos y te contactaremos pronto!</h2>
-            <form action="https://formsubmit.co/risingraimon@gmail.com" method="POST" class="mt-6"> <!-- ESTE FORMs SE VE EN https://dashboard.formspark.io de aaronbm03@gmail.com CON GOOGLE -->
-                <input type="hidden" name="_next" value="https://risingraimon.es">
-                <input type="hidden" name="_captcha" value="false">
-                <div class="mb-4">
-                    <label for="nombre" class="block font-bold">Nombre: <span class="text-red-500">*</span> </label>
-                    <input type="text" id="nombre" name="nombre" required class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block font-bold">Correo Electrónico: <span class="text-red-500">*</span> </label>
-                    <input type="email" id="email" name="email" required class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="telefono" class="block font-bold">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="edad" class="block font-bold">Año de nacimiento: <span class="text-red-500">*</span> </label>
-                    <input type="number" id="nacimiento" name="nacimiento" required class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="posicion" class="block font-bold">Posición:</label>
-                    <input type="text" id="posicion" name="posicion" required class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="carrera" class="block font-bold">Cuenta tu carrera futbolística:</label>
-                    <input type="textarea" id="carrera" name="carrera" required class="w-full border rounded-lg p-2">
-                </div>
-                <div class="mb-4">
-                    <label for="genero" class="block font-bold">Género: <span class="text-red-500">*</span> </label>
-                    <select id="genero" name="genero" required class="w-full border rounded-lg p-2">
-                        <option value="Masculino">Masculino</option>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos" class="font-bold">Acepto los <a href="https://risingraimon.es/privacy-policy/" class="text-[#3A68A8] underline">términos y condiciones</a></label>
-                </div>
-                <button type="submit" class="w-full bg-[#EDCB50] text-[#3A68A8] font-bold py-2 rounded-lg transition duration-300 hover:bg-[#3A68A8] hover:text-[#EDCB50]">Enviar</button>
-            </form>
-        </div>
-    </section>
-      
-
-    <!-- Slider de imágenes con Swiper.js centrado -->
-    <section class="container mx-auto py-10">
-        <h2 class="text-3xl font-bold text-[#EDCB50]">PACK DE ROPA</h2>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <figure class="flex flex-col items-center">
-                        <img src="placeholder-camiseta.png" alt="Camiseta de partido">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Camiseta de partido</figcaption>
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="flex flex-col items-center">
-                        <img src="placeholder-pantalon-partido.png" alt="Pantalon de partido">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Pantalón de partido</figcaption>
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="flex flex-col items-center">
-                        <img src="placeholder-chandal.png" alt="Medias de partido">
-                        <figcaption class="mt-2 text-sm text-[#EDCB50] font-bold">Medias de partido</figcaption>
-                    </figure>
-                </div>
-            </div>
-            <!-- Botones de navegación dentro del slider -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
-  </section>
-
-<section class="social-section">
-    <h2 class="text-3xl font-bold text-center text-[#EDCB50]">REDES SOCIALES</h2>
-    <div class="social-container">
-        <div class="social-item">
-            <img src="youtube-icon.png" alt="YouTube">
-            <a href="https://www.youtube.com/@RisingRaimon" target="_blank">YouTube</a>
-        </div>
-        <div class="social-item">
-            <img src="tik-tok-icon.png" alt="TikTok">
-            <a href="https://www.tiktok.com/@RisingRaimon" target="_blank">TikTok</a>
-        </div>
-        <div class="social-item">
-            <img src="instagram-icon.png" alt="Instagram">
-            <a href="https://www.instagram.com/risingraimon/" target="_blank">Instagram</a>
-        </div>
-    </div>
-</section>
-
-    <!-- Testimonios -->
-    <section class="testimonials">
-        <h2 class="text-3xl font-bold text-center text-[#3A68A8] animate__animated animate__fadeIn">OPINIONES</h2>
-        <div class="testimonials-contaiiner flex justify-center space-x-6 mt-6">
-            <div class="testimonial-card animate__animated animate__fadeInLeft">
-                <img src="guillermo_parra.jpg" class="rounded-full mx-auto">
-                <p class="mt-4">"El Rising Raimon es un proyectazo, ¡me hace mucha ilusión poder formar parte!"</p>
-                <p class="mt-2 font-bold">- Guillermo Parra</p>
-            </div>
-            <div class="testimonial-card animate__animated animate__fadeInRight">
-                <img src="jimena_lopez.jpg" class="rounded-full mx-auto">
-                <p class="mt-4">"¿La pregunta sobre el género significa que habrá equipo femenino? ¡Yo me apunto si lo hay!"</p>
-                <p class="mt-2 font-bold">- Jimena López</p>
-            </div>
-        </div>
+<body class="theme-portal">
+  <main class="portal-shell">
+    <section class="portal-hero">
+      <div class="portal-copy">
+        <span class="eyebrow">Rising Raimon</span>
+        <h1>Elige tu inscripción y entra en el proyecto.</h1>
+        <p>Dos rutas, una misma esencia: un club en crecimiento, competitivo y con una identidad muy marcada dentro y fuera del campo.</p>
+      </div>
+      <div class="portal-visual">
+        <img class="portal-mascot" src="recursos_generales/Pose_victoria_final.png" alt="Mascota de Rising Raimon celebrando">
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white text-center py-6">
-        <p>©2025 Rising Raimon | Contacto: risingraimon@gmail.com | 627 110 559 (Sara) ó 673 705 312 (Aarón) | Patrocinadores: Charly's Cave, </p>
-    </footer>
+    <section class="portal-grid" aria-label="Selecciones de inscripción">
+      <article class="location-card location-card-madrid">
+        <img class="location-shield" src="recursos_madrid/ESCUDO.png" alt="Escudo de Rising Raimon Madrid">
+        <div>
+          <span class="location-tag">Madrid</span>
+          <h2>¡SIGAMOS CONSOLIDANDO LA CANTERA!</h2>
+          <p>Pruebas el 12 de junio, varias categorías y opciones de horarios para encajar en el equipo adecuado.</p>
+        </div>
+        <a class="button button-primary" href="madrid/">Ir a Madrid</a>
+      </article>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>        
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 2,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: { delay: 3000 },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-            }
-        });
-    </script>
+      <article class="location-card location-card-cataluna">
+        <img class="location-shield" src="recursos_cat/catalunya.png" alt="Escudo de Rising Raimon Cataluña">
+        <div>
+          <span class="location-tag">Cataluña</span>
+          <h2>¡NOS EXPANDIMOS A OTRAS ZONAS!</h2>
+          <p>Elige tu zona, deja tu perfil y te avisaremos en cuanto se publiquen las pruebas.</p>
+        </div>
+        <a class="button button-primary" href="cataluna/">Ir a Cataluña</a>
+      </article>
+    </section>
+  </main>
 </body>
 </html>

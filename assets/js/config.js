@@ -1,5 +1,5 @@
 window.APP_CONFIG = {
-  formsEndpoint: "",
+  formsEndpoint: "https://script.google.com/macros/s/AKfycbzUV4u7JOeBcTQjCdchn4_i-AO1bgmpK_doLBfbt9n3t_DeiwggirPNQ7XTvwCQC709/exec",
   contactEmail: "risingraimon@gmail.com",
   privacyUrl: "https://risingraimon.es/privacy-policy/",
   mainSiteUrl: "https://www.risingraimon.es",

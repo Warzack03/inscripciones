@@ -461,6 +461,12 @@ p {
   align-content: start;
 }
 
+.pack-note {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
 .pack-split {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -882,6 +888,7 @@ p {
   .portal-visual {
     min-height: 320px;
   }
+
 }
 
 @media (max-width: 720px) {

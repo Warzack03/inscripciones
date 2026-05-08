@@ -1,6 +1,6 @@
 const SPREADSHEET_ID = "PEGA_AQUI_EL_ID_DE_TU_GOOGLE_SHEET";
 const NOTIFICATION_EMAIL = "risingraimon@gmail.com";
-const ALLOWED_SHEETS = ["Madrid", "Tarragona", "Reus", "Barcelona"];
+const ALLOWED_SHEETS = ["Madrid", "Tarragona", "Barcelona"];
 
 function doPost(e) {
   try {

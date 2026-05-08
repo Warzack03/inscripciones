@@ -1,7 +1,6 @@
 (function () {
   const ZONE_TEXT = {
     Tarragona: "Estás en el formulario de Tarragona.",
-    Reus: "Estás en el formulario de Reus.",
     Barcelona: "Estás en el formulario de Barcelona."
   };
 

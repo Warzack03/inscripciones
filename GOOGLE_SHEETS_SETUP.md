@@ -4,10 +4,9 @@
 
 1. Crea un Google Sheet nuevo.
 2. Cambiale el nombre a algo como `Inscripciones Rising Raimon`.
-3. Crea estas cuatro pestanas:
+3. Crea estas tres pestanas:
    - `Madrid`
    - `Tarragona`
-   - `Reus`
    - `Barcelona`
 
 No hace falta que pongas columnas manualmente. El script las crea solo en el primer envio.
